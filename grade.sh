@@ -8,15 +8,17 @@ mkdir grading-area
 git clone $1 student-submission
 echo 'Finished cloning'
 
-if [[ -f $1]]
+files='student-submission'
+
+for file in $files
+if [[ -f $file]]
 then 
     echo 'Valid files'
 else
-then 
     echo 'Not Valid files'
 fi
 
-for file in $1
+for file in student-submission
 do
   cp file grading-area
 done
