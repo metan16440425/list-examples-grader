@@ -8,20 +8,16 @@ mkdir grading-area
 git clone $1 student-submission
 echo 'Finished cloning'
 
-files='student-submission'
 
-for file in $files
-if [[ -f $file]]
-then 
-    echo 'Valid files'
-else
-    echo 'Not Valid files'
+if [[ -f 'student-submission/ListExamples.java' ]]
+    then 
+        echo 'Valid files'
+    else
+        echo 'Not Valid files'
 fi
 
-for file in student-submission
-do
-  cp file grading-area
-done
+
+cp 'student-submission/ListExamples.java' grading-area
 
 javac -cp ".;lib/hamcrest-core-1.3.jar;lib/junit-4.13.2.jar" *.java
 
